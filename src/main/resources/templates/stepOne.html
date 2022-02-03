@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>stepOne</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&family=Hurricane&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+    padding: 10px;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    background-color: #c7c4d1;
+    padding-left: 100px;
+    padding-right: 100px;
+    }
+
+    .headline {
+    color: #26272a;
+    margin-top: 5px;
+
+    background-color: #8a8992;
+    width: 1800px;
+    height: 150px;
+    border-radius: 5px;
+    float: left;
+    }
+
+    .header-image {
+    border-radius: 5px;
+    width: 60%;
+    }
+
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    }
+
+    .inputBox {
+    color: #26272a;
+    background-color: #8a8992;
+    height: 400px;
+    border-radius: 5px;
+    float: right;
+    margin-left: 5px;
+
+    }
+
+    .inputField {
+    height: 20px;
+    padding-top: 5px;
+    padding-left: 10px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    border: 1px solid #000;
+    background-color: #e2e2e2;
+    }
+
+    .container {
+    display: flex;
+    width: 100%;
+    }
+
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+      border-right:1px solid #bbb;
+    }
+
+    li:last-child {
+      border-right: none;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+
+    .active {
+      background-color: #ffd45e;
+    }
+
+
+</style>
+<body>
+
+<ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href=https://de.wikipedia.org/wiki/Kopfstandtechnik">Über uns</a></li>
+    <li style="float:right"><a href="https://de.wikipedia.org/wiki/Kopfstandtechnik">Wikipedia Link</a></li>
+</ul>
+
+
+        <div class="navbar">
+            <h1 class="headline">
+                <center>Reverse Brainstorming - in vier Arbeitsschritten zum Ergebniss! <br> Legen wir los...</center>
+
+            </h1>
+        </div>
+
+        <div class="container">
+                <img class="header-image" src="stepOne.jpg">
+
+    <div class="inputBox">
+            <form method="post" action="input" th:object="${eingabe}">
+                <label><h2> Welches Problem möchtest du lösen?</h2> </label>
+                <input size="30" class="inputField" th:field=*{"inputStepOne}" type="text">
+
+        <div class="button">
+            <button class="buttonOk" type="submit">OK</button>
+            <button class="buttonLöschen" type="submit">löschen</button>
+            <button class="buttonNächsterSchritt" type="submit">nächster Schritt</button>
+        </div>
+            </form>
+    </div>
+
+
+</body>
+</html>
