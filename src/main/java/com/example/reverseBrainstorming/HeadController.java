@@ -12,12 +12,14 @@ public class HeadController {
 
     private List<String> positiv = new ArrayList<>();
     private List<String> negativ = new ArrayList<>();
+    private String problem;
 
-
-    @GetMapping("eingabe")
+    @GetMapping("/")
     public String getStartPage(Model model) {
         model.addAttribute("eingabe");
        // negativ.add()
         return "stepOne";
     }
+
+
 }

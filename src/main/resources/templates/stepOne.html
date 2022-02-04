@@ -51,12 +51,13 @@
     font-size: 13px;
     border: 1px solid black;
     background-color: #e2e2e2;
-    margin-left: 60px;
+    margin-left: 75px;
     }
 
     .container2 {
     display: flex;
     width: 100%;
+
     }
 
 
@@ -177,8 +178,20 @@
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
-      margin-left: 60px;
+      margin-left: 75px;
     }
+
+    .fusszeile {
+     color: white;
+     border-radius: 5px;
+     background-color: #26272a;
+     width: 220px;
+     height: 570px;
+     margin-left: 5px;
+    }
+
+
+
 
 
 </style>
@@ -195,7 +208,6 @@
         <div class="navbar">
             <h1 class="headline">
                 <center>Reverse Brainstorming - in vier Arbeitsschritten zum Ergebniss! <br> Legen wir los...</center>
-
             </h1>
         </div>
 
@@ -205,8 +217,8 @@
     <div class="inputBox">
             <form method="post" action="input" th:object="${eingabe}">
                     <h1><label><center>Kopfstandtechnik</center></label></h1>
-                    <label>
-                        <h3>
+                    <label class="beschreibung">
+                        <h3 style="margin: 20px 20px;">
                         Ja – du siehst richtig:<br> Mit der Kopfstand-Methode wird es jetzt ein wenig verrückt oder auch ungewohnt.
                         Denn du formulierst deine Herausforderung neu und verdrehst es dabei genau ins Gegenteil. Du stellst das Problem also sprichwörtlich auf den Kopf.
                         </h3>
@@ -222,6 +234,8 @@
                 <button class="glow-on-hover" type="submit">nächster Schritt -></button>
             </form>
     </div>
-
+            <div class="fusszeile">
+                <label><h2 style="margin:200px 20px;"><center>Hier könnte deine Werbung stehen :D</center></h2></label>
+            </div>
 </body>
 </html>
