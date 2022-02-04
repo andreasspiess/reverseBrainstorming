@@ -60,36 +60,14 @@
 
     .header-image {
     border-radius: 5px;
-    width: 100%;
-    margin-right: 500px;
+    width: 1000px;
+    height: 400px;
     margin-top: 20px;
     margin-bottom: 500px;
     margin-left: 20px;
     }
 
-        .buttonOk {
-      background-color: #4CAF50;
-      border: none;
-      color: white;
-      padding: 10px 28px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin-left: 100px;
-    }
 
-    .buttonLöschen {
-      background-color: #d45162;
-      border: none;
-      color: white;
-      padding: 10px 28px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin-left: 75px;
-    }
 
         .glow-on-hover {
         margin-left: 120px;
@@ -154,6 +132,47 @@
         100% { background-position: 0 0; }
     }
 
+    .ueberschrift {
+    font-size: 20px;
+    margin-left: 100px;
+    margin-top: 50px;
+    }
+
+    .inputField {
+    height: 20px;
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size: 13px;
+    border: 1px solid black;
+    background-color: #e2e2e2;
+    margin-left: 75px;
+    }
+
+    .buttonOk {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+
+    .buttonLöschen {
+      background-color: #d45162;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+
 
     </style>
 <body>
@@ -166,15 +185,23 @@
     </ul>
 
     <div class="body2">
+
         <img class="header-image" src="stepTwo.jpg">
-        <div class="button">
-            <button class="buttonLöschen" type="submit">Löschen</button>
-            <button class="buttonOk" type="reset">Ok</button>
-
-        <button class="glow-on-hover" type="submit">nächster Schritt -></button>
-        <label></label>
 
 
+        <div class="ueberschrift">
+            <label><h1>Trage hierzu die entsprechenden Ideen ein</h1></label>
+
+            <input class="inputField" type="text">
+            <button class="buttonOk" type="submit">Ok</button>
+            <button class="buttonLöschen" type="reset">Löschen</button>
+
+            <button class="glow-on-hover" type="submit">nächster Schritt -></button>
+        </div>
+
+        <div class="ueberschrift2">
+            <h1>Alles klar! Du möchtest das Problem<br> ................. verbessern.</h1>
+        </div>
     </div>
 
 
