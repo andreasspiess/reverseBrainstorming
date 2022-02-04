@@ -10,13 +10,14 @@ import java.util.List;
 @Controller
 public class HeadController {
 
-    private List<String> stepOne = new ArrayList<>();
-    private List<String> stepTwo = new ArrayList<>();
+    private List<String> positiv = new ArrayList<>();
+    private List<String> negativ = new ArrayList<>();
 
 
     @GetMapping("eingabe")
     public String getStartPage(Model model) {
         model.addAttribute("eingabe");
+       // negativ.add()
         return "stepOne";
     }
 }
