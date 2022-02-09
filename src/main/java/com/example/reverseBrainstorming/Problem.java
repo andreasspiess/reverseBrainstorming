@@ -1,6 +1,6 @@
 package com.example.reverseBrainstorming;
 
-public class Main {
+public class Problem {
 
 
 }
