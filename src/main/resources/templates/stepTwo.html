@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -180,7 +180,7 @@
     <ul>
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="#news">News</a></li>
-        <li><a href=https://de.wikipedia.org/wiki/Kopfstandtechnik">Über uns</a></li>
+        <li><a href="https://de.wikipedia.org/wiki/Kopfstandtechnik">Über uns</a></li>
         <li style="float:right"><a href="https://de.wikipedia.org/wiki/Kopfstandtechnik">Wikipedia Link</a></li>
     </ul>
 
@@ -188,11 +188,11 @@
 
         <img class="header-image" src="stepTwo.jpg">
 
-
+    <form method="post" action="stepTwo" th:object="${saveNegativIdeas}">
         <div class="ueberschrift">
             <label><h1>Trage hierzu die entsprechenden Ideen ein</h1></label>
+            <input size="30" class="inputField" type="text" th:field="*{negativFormList}">
 
-            <input class="inputField" type="text">
             <button class="buttonOk" type="submit">Ok</button>
             <button class="buttonLöschen" type="reset">Löschen</button>
 
@@ -202,7 +202,9 @@
         <div class="ueberschrift2">
             <h1>Alles klar! Du möchtest das Problem<br> ................. verbessern.</h1>
         </div>
+    </form>
     </div>
+
 
 
 </body>

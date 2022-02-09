@@ -189,7 +189,7 @@
 <ul>
     <li><a class="active" href="#home">Home</a></li>
     <li><a href="#news">News</a></li>
-    <li><a href=https://de.wikipedia.org/wiki/Kopfstandtechnik">Über uns</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Kopfstandtechnik">Über uns</a></li>
     <li style="float:right"><a href="https://de.wikipedia.org/wiki/Kopfstandtechnik">Wikipedia Link</a></li>
 </ul>
 
@@ -204,7 +204,7 @@
                 <img class="header-image" src="stepOne.jpg">
 
     <div class="inputBox">
-            <form method="post" action="input" th:object="${eingabe}">
+            <form method="post" action="/" th:object="${saveProblem}">
                     <h1><label><center>Kopfstandtechnik</center></label></h1>
                     <label class="beschreibung">
                         <h3 style="margin: 20px 20px;">
@@ -213,14 +213,14 @@
                         </h3>
                     </label>
 
-                <label><center><h1> Welches Problem möchtest du lösen?</h1></center></label>
-                <input size="30" class="inputField" th:field=*{"inputStepOne}" type="text">
+                <label></label><h1 style="margin: 20px 20px;"> Welches Problem möchtest du lösen?</h1></label>
+                <input size="30" class="inputField" th:field="*{problem}" type="text">
 
         <div class="button">
-            <button class="buttonLöschen" type="submit">Löschen</button>
-            <button class="buttonOk" type="reset">Ok</button>
+            <button class="buttonLöschen" type="reset">Löschen</button>
+            <button class="buttonOk" type="submit">Ok</button>
         </div>
-                <button class="glow-on-hover" type="submit">nächster Schritt -></button>
+                <button class="glow-on-hover" type="button" onclick="location.href='http://localhost:8080/stepTwo'">nächster Schritt -></button>
             </form>
     </div>
 
