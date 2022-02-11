@@ -11,8 +11,9 @@ import java.util.List;
 @Controller
 public class HeadController {
 
-    private List<String> positivFormList = new ArrayList<>();
     private List<String> negativFormList = new ArrayList<>();
+    private List<String> positivFormList = new ArrayList<>();
+    private static String problem;
 
     @GetMapping("/")
     public String getStartPage(Model model) {
@@ -23,63 +24,39 @@ public class HeadController {
     @PostMapping("/")
     public String saveProblem(Model model, ProblemForm problemForm) {
         model.addAttribute("saveProblem", new ProblemForm());
-        ProblemForm problem = problemForm;
-        System.out.println(problem.toString());
+        problem = String.valueOf(problemForm);
+        System.out.println(problem);
         return "stepOne";
     }
 
     @GetMapping("stepTwo")
-    public String getNegativIdeas (Model model) {
-        model.addAttribute("saveNegativIdeas", negativFormList);
-        //negativFormList.add();
+    public String getNegativIdeas (Model model, NegativForm negativForm, ProblemForm problemForm) {
+        model.addAttribute("saveNegativIdeas", new NegativForm());
+        model.addAttribute("problem", problem.toString());
+//      System.out.println(problemForm.getProblem());
+//      System.out.println(negativForm.getNegativ());
         return "stepTwo";
     }
 
     @PostMapping("stepTwo")
-    public String saveNegativIdeas (Model model) {
-        model.addAttribute("saveNegativIdeas", negativFormList);
-        //negativFormList.add()
+    public String saveNegativIdeas (Model model, NegativForm negativForm) {
+        model.addAttribute("saveNegativIdeas", new NegativForm());
+        model.addAttribute("problem", problem.toString());
+        //model.addAttribute("negativ", negativ);
+        negativFormList.add(negativForm.getNegativ());
+        System.out.println(negativForm.getNegativ());
         return "stepTwo";
     }
 
     @GetMapping("stepThree")
     public String getPositvIdeas(Model model) {
-        model.addAttribute("savePositivIdeas", positivFormList);
+        model.addAttribute("savePositivIdeas");
         return "stepThree";
     }
 
     @PostMapping("stepThree")
     public String savePositivIdeas(Model model) {
-        model.addAttribute("savePositivIdeas", positivFormList);
+        model.addAttribute("savePositivIdeas");
         return "stepThree";
-    }
-
-    @GetMapping("stepVour")
-    public String output() {
-        return "stepVour";
-    }
-
-    public List<String> getPositivFormList() {
-        return positivFormList;
-    }
-
-    public void setPositivFormList(List<String> positivFormList) {
-        this.positivFormList = positivFormList;
-    }
-
-    public List<String> getNegativFormList() {
-        return negativFormList;
-    }
-
-    public void setNegativFormList(List<String> negativFormList) {
-        this.negativFormList = negativFormList;
-    }
-
-    @Override
-    public String toString() {
-        return "HeadController{" +
-                "positivFormList=" + positivFormList +
-                ", negativFormList=" + negativFormList +
-                '}';
     }
 }

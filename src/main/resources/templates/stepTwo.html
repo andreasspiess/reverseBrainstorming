@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:color="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>stepTwo</title>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&family=Hurricane&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-</head>
     <style>
     body {
     padding: 10px;
@@ -12,6 +11,17 @@
     background-color: #c7c4d1;
     padding-left: 100px;
     padding-right: 100px;
+    }
+
+    .body2 {
+    color: #26272a;
+    margin-top: 5px;
+    background-color: #8a8992;
+    width: 102rem;
+    height: 760px;
+    border-radius: 5px;
+    float: left;
+    display: flex;
     }
 
     ul {
@@ -47,30 +57,8 @@
       background-color: #ffd45e;
     }
 
-    .body2 {
-    color: #26272a;
-    margin-top: 5px;
-    background-color: #8a8992;
-    width: 1630px;
-    height: 800px;
-    border-radius: 5px;
-    float: left;
-    display: flex;
-    }
-
-    .header-image {
-    border-radius: 5px;
-    width: 1000px;
-    height: 400px;
-    margin-top: 20px;
-    margin-bottom: 500px;
-    margin-left: 20px;
-    }
-
-
-
         .glow-on-hover {
-        margin-left: 120px;
+        margin-left: 90px;
         margin-top: 30px;
         margin-right: 30px;
         width: 220px;
@@ -132,11 +120,31 @@
         100% { background-position: 0 0; }
     }
 
-    .ueberschrift {
-    font-size: 20px;
-    margin-left: 100px;
-    margin-top: 50px;
+    .header-image {
+    border-radius: 5px;
+    width: 1000px;
+    height: 400px;
+    margin-top: rem;
+    margin-left: 1rem;
+    float: left; 1rem;
     }
+
+    .ueberschrift {
+    font-size: 25px;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    }
+
+    .text {
+    margin-left: 1rem;
+    }
+
+    .ueberschrift2 {
+    font-size: 20px;
+    margin-top: 4rem;
+    margin-left:68rem;
+    }
+
 
     .inputField {
     height: 20px;
@@ -145,7 +153,12 @@
     font-size: 13px;
     border: 1px solid black;
     background-color: #e2e2e2;
-    margin-left: 75px;
+    margin-left: 10px;
+    }
+
+    .button {
+    margin-left: px;
+    margin-top: px;
     }
 
     .buttonOk {
@@ -169,12 +182,20 @@
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
-      margin-top: 15px;
+      margin-top: 5px;
+      margin-left: 100px;
     }
 
+    .verhindern {
+    color: #ffd45e;
+    }
 
+    .output {
+    color: #ffd45e;
+    }
 
     </style>
+</head>
 <body>
 
     <ul>
@@ -186,26 +207,32 @@
 
     <div class="body2">
 
-        <img class="header-image" src="stepTwo.jpg">
+        <div>
+            <div class="ueberschrift">
+                <h1>Alles klar! Du möchtest das Problem<br> <span class="output" th:text="${problem}" ></span>  verbessern.</h1>
+            </div>
+            <div class="text">
+                <h2>
+                    Im zweiten Schritt werden diejenigen Maßnahmen und Ergebnisse gesammelt, <br> die das Erreichen
+                    eines gewünschten Ergebnisses <span class="verhindern">verhindern</span>  würden.
+                </h2>
+            </div>
+            <img class="header-image" src="stepTwo.jpg">
 
-    <form method="post" action="stepTwo" th:object="${saveNegativIdeas}">
-        <div class="ueberschrift">
-            <label><h1>Trage hierzu die entsprechenden Ideen ein</h1></label>
-            <input size="30" class="inputField" type="text" th:field="*{negativFormList}">
+            <form method="post" action="stepTwo" th:object="${saveNegativIdeas}">
 
-            <button class="buttonOk" type="submit">Ok</button>
-            <button class="buttonLöschen" type="reset">Löschen</button>
-
-            <button class="glow-on-hover" type="submit">nächster Schritt -></button>
+                <div class="ueberschrift2">
+                    <h1>Trage hierzu die entsprechenden Ideen ein</h1>
+                    <input class="inputField" size="30" type="text" th:field="*{negativ}">
+                    <div class="button">
+                        <button class="buttonOk" type="submit">Ok</button>
+                        <button class="buttonLöschen" type="reset">Löschen</button>
+                    </div>
+                    <button class="glow-on-hover" type="submit">nächster Schritt -></button>
+                </div>
+            </form>
         </div>
-
-        <div class="ueberschrift2">
-            <h1>Alles klar! Du möchtest das Problem<br> ................. verbessern.</h1>
-        </div>
-    </form>
     </div>
-
-
 
 </body>
 </html>

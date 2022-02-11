@@ -5,7 +5,7 @@ public class ProblemForm {
 
     @Override
     public String toString() {
-        return "ProblemForm{ " + problem + '\'' + '}';
+        return problem;
     }
 
     public String getProblem() {
