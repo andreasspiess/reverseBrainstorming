@@ -33,8 +33,6 @@ public class HeadController {
     public String getNegativIdeas (Model model, NegativForm negativForm, ProblemForm problemForm) {
         model.addAttribute("saveNegativIdeas", new NegativForm());
         model.addAttribute("problem", problem.toString());
-//      System.out.println(problemForm.getProblem());
-//      System.out.println(negativForm.getNegativ());
         return "stepTwo";
     }
 
@@ -42,21 +40,22 @@ public class HeadController {
     public String saveNegativIdeas (Model model, NegativForm negativForm) {
         model.addAttribute("saveNegativIdeas", new NegativForm());
         model.addAttribute("problem", problem.toString());
-        //model.addAttribute("negativ", negativ);
         negativFormList.add(negativForm.getNegativ());
         System.out.println(negativForm.getNegativ());
         return "stepTwo";
     }
 
     @GetMapping("stepThree")
-    public String getPositvIdeas(Model model) {
-        model.addAttribute("savePositivIdeas");
+    public String getPositvIdeas(Model model, PositivForm positivForm) {
+        model.addAttribute("savePositivIdeas", new PositivForm());
         return "stepThree";
     }
 
     @PostMapping("stepThree")
-    public String savePositivIdeas(Model model) {
-        model.addAttribute("savePositivIdeas");
+    public String savePositivIdeas(Model model, PositivForm positivForm) {
+        model.addAttribute("savePositivIdeas", new PositivForm());
+        positivFormList.add(positivForm.getPositiv());
+        System.out.println(positivForm.getPositiv());
         return "stepThree";
     }
 }
