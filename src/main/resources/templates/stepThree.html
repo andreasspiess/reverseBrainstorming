@@ -63,16 +63,17 @@
     border-radius: 5px;
     width: 60rem;
     height: 30rem;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 2rem;
+    margin-left: 2rem;
     }
 
 
 
     .glow-on-hover {
-    margin-left: 120px;
-    margin-top: 1rem;;
+    margin-left: 23rem;
+    margin-top: rem;;
     margin-right: 30px;
+    margin-bottom: 5rem;
     width: 220px;
     height: 50px;
     border: none;
@@ -135,12 +136,13 @@
     .ueberschrift {
     font-size: 20px;
     margin-left: 2rem;
+    margin-right: 2rem;
     margin-top: 50px;
     }
 
     .inputField {
     height: 25px;
-    width: 20rem;
+    width: 25rem;
     margin-top: 2rem;
     margin-left: 10rem;
     font-size: 20px;
@@ -155,7 +157,7 @@
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
-      margin-left: 10px;
+      margin-left: 5px;
     }
 
     .buttonLöschen {
@@ -168,6 +170,7 @@
       display: inline-block;
       font-size: 16px;
       margin-top: 2px;
+      margin-left: 93px;
     }
 
     .select {
@@ -179,13 +182,12 @@
     .input {
     font-size: 20px;
     height: 25px;
-    max-width: 12rem;
-    min-width: 12rem;
+    width: 283px;
     }
 
     .text {
     font-size: 40px;
-    margin-left: 20px;
+    margin-left: 2rem;
     margin-top: 1rem;
     }
 
@@ -215,14 +217,18 @@
         <div class="inputField">
             <form method="post" action="stepThree" th:object="${savePositivIdeas}">
             <div>
-                <select class="select"></select>
+                <select class="select">
+                    <option th:each="x : ${negativFormList}"
+                            th:text="${x.getNegativ}">
+                    </option>
+                </select>
                 <input class="input" type="text" th:field="*{positiv}">
             </div>
-            <div class="button">
-                <button class="buttonOk" type="submit">Ok</button>
-                <button class="buttonLöschen" type="reset">Löschen</button>
-            </div>
-            <button class="glow-on-hover" type="button" onclick="location.href='http://localhost:8080/stepVour'">nächster Schritt -></button>
+                <div class="button">
+                    <button class="buttonOk" type="submit">Ok</button>
+                    <button class="buttonLöschen" type="reset">Löschen</button>
+                    <button class="glow-on-hover" type="button" onclick="location.href='http://localhost:8080/stepVour'">nächster Schritt -></button>
+                </div>
             </form>
         </div>
     </div>
@@ -232,7 +238,7 @@
             <label><h1>Fast geschafft! Nun zu den Lösungsvorschlägen!</h1></label>
             <div class="ueberschrift2">
                 <h3>Nach dieser „destruktiven“ Phase werden Lösungen für die identifizierten Hindernisse
-                    und Probleme gesucht. Für beide Phasen gelten die Regeln  des regulären Brainstormings.
+                    und Probleme gesucht. Für beide Phasen gelten die Regeln des regulären Brainstormings.
                 </h3>
             </div>
         </div>

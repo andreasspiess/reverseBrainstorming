@@ -11,8 +11,8 @@ import java.util.List;
 @Controller
 public class HeadController {
 
-    private List<String> negativFormList = new ArrayList<>();
-    private List<String> positivFormList = new ArrayList<>();
+    private static List<NegativForm> negativFormList = new ArrayList<>();
+    private static List<PositivForm> positivFormList = new ArrayList<>();
     private static String problem;
 
     @GetMapping("/")
@@ -40,21 +40,23 @@ public class HeadController {
     public String saveNegativIdeas (Model model, NegativForm negativForm) {
         model.addAttribute("saveNegativIdeas", new NegativForm());
         model.addAttribute("problem", problem.toString());
-        negativFormList.add(negativForm.getNegativ());
-        System.out.println(negativForm.getNegativ());
+        negativFormList.add(negativForm);
+        System.out.println(negativFormList);
         return "stepTwo";
     }
 
     @GetMapping("stepThree")
     public String getPositvIdeas(Model model, PositivForm positivForm) {
         model.addAttribute("savePositivIdeas", new PositivForm());
+        model.addAttribute("negativFormList", negativFormList);
         return "stepThree";
     }
 
     @PostMapping("stepThree")
     public String savePositivIdeas(Model model, PositivForm positivForm) {
         model.addAttribute("savePositivIdeas", new PositivForm());
-        positivFormList.add(positivForm.getPositiv());
+        model.addAttribute("PositivFormList", positivFormList);
+        positivFormList.add(positivForm);
         System.out.println(positivForm.getPositiv());
         return "stepThree";
     }
