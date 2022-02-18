@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>stepFour</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&family=Hurricane&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+
+    body {
+    padding: 10px;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    background-color: #c7c4d1;
+    padding-left: 100px;
+    padding-right: 100px;
+    }
+
+    .header-image {
+    width: 1620px;
+    height: 50rem;
+    margin-top: 5px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+      border-right:1px solid #bbb;
+    }
+
+    li:last-child {
+      border-right: none;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+
+    .active {
+      background-color: #ffd45e;
+    }
+
+    div.rotate-1 {
+      -webkit-transform: rotate(-6deg);
+      -o-transform: rotate(-6deg);
+      -moz-transform: rotate(-6deg);
+    }
+
+    div.rotate-2 {
+      -o-transform: rotate(4deg);
+      -webkit-transform: rotate(4deg);
+      -moz-transform: rotate(4deg);
+      position: relative;
+      top: 5px;
+    }
+
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="https://de.wikipedia.org/wiki/Kopfstandtechnik">Über uns</a></li>
+        <li style="float:right"><a href="https://de.wikipedia.org/wiki/Kopfstandtechnik">Wikipedia Link</a></li>
+    </ul>
+
+        <img class="header-image" src="tafel.jpg">
+
+    <option th:each="k : ${negativFormList}"
+            th:text="${k.negativForm}"
+            th:value="${negativFormList.indexOf(k)}">
+    </option>
+
+        <p>
+            <div style="overflow-wrap:break-word; float:left; margin-left:5px; margin-top:30px; background-color:#fdffb6; height:auto; width:150px; " class="rotate-1"
+                    th:each="x : ${negativFormList}">
+                <h4 th:text="${x.getNegativ}"></h4>
+                <p  th:each="y : ${x.positivFormList"
+                    th:text="${y.getPositiv}"></p>
+            </div>
+        </p>
+</body>
+</html>

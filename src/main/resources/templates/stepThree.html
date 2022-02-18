@@ -52,7 +52,7 @@
     color: #26272a;
     margin-top: 5px;
     background-color: #8a8992;
-    width: 1630px;
+    width: auto;
     height: 800px;
     border-radius: 5px;
     float: left;
@@ -137,7 +137,7 @@
     font-size: 20px;
     margin-left: 2rem;
     margin-right: 2rem;
-    margin-top: 50px;
+    margin-top: 6rem;
     }
 
     .inputField {
@@ -195,18 +195,25 @@
     margin-left: 6rem;
     }
 
+    .fusszeile {
+    border-radius: 5px;
+    margin-top: 805px;
+    background-color: #333;
+    width: auto;
+    height: 30px;
+    }
+
     </style>
 <body>
 
 <ul>
-    <li><a class="active" href="#home">Home</a></li>
+    <li><a class="active" href="location.href='http://localhost:8080/stepOne'">Home</a></li>
     <li><a href="#news">News</a></li>
     <li><a href="https://de.wikipedia.org/wiki/Kopfstandtechnik">Über uns</a></li>
     <li style="float:right"><a href="https://de.wikipedia.org/wiki/Kopfstandtechnik">Wikipedia Link</a></li>
 </ul>
 
 <div class="body2">
-
 
     <div>
         <img class="header-image" src="stepThree.jpg">
@@ -219,7 +226,8 @@
             <div>
                 <select class="select">
                     <option th:each="x : ${negativFormList}"
-                            th:text="${x.getNegativ}">
+                            th:text="${x.getNegativ}"
+                            th:value="${negativFormList.indexOf(x)}">
                     </option>
                 </select>
                 <input class="input" type="text" th:field="*{positiv}">
@@ -227,22 +235,28 @@
                 <div class="button">
                     <button class="buttonOk" type="submit">Ok</button>
                     <button class="buttonLöschen" type="reset">Löschen</button>
-                    <button class="glow-on-hover" type="button" onclick="location.href='http://localhost:8080/stepVour'">nächster Schritt -></button>
+                    <button class="glow-on-hover" type="button" onclick="location.href='http://localhost:8080/stepFour'">nächster Schritt -></button>
                 </div>
+
             </form>
         </div>
     </div>
 
 
-        <div class="ueberschrift">
-            <label><h1>Fast geschafft! Nun zu den Lösungsvorschlägen!</h1></label>
-            <div class="ueberschrift2">
-                <h3>Nach dieser „destruktiven“ Phase werden Lösungen für die identifizierten Hindernisse
+    <div class="ueberschrift">
+        <label><h1>Fast geschafft! Nun zu den Lösungsvorschlägen!</h1></label>
+        <div class="ueberschrift2">
+            <h3>Nach dieser „destruktiven“ Phase werden Lösungen für die identifizierten Hindernisse
                     und Probleme gesucht. Für beide Phasen gelten die Regeln des regulären Brainstormings.
                 </h3>
-            </div>
         </div>
+    </div>
 
-</div>
 </body>
+
+<!--    </div>
+    <div class="fusszeile">
+        <label style="color: white; margin-left: 10px;"></label>
+    </div>
+-->
 </html>

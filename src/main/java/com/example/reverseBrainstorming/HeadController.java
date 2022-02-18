@@ -14,6 +14,7 @@ public class HeadController {
     private static List<NegativForm> negativFormList = new ArrayList<>();
     private static List<PositivForm> positivFormList = new ArrayList<>();
     private static String problem;
+    //private static List<String> outputList = new ArrayList<>();
 
     @GetMapping("/")
     public String getStartPage(Model model) {
@@ -47,17 +48,31 @@ public class HeadController {
 
     @GetMapping("stepThree")
     public String getPositvIdeas(Model model, PositivForm positivForm) {
+        model.addAttribute("saveNegativIdeas", new NegativForm());
         model.addAttribute("savePositivIdeas", new PositivForm());
         model.addAttribute("negativFormList", negativFormList);
         return "stepThree";
     }
 
     @PostMapping("stepThree")
-    public String savePositivIdeas(Model model, PositivForm positivForm) {
+    public String savePositivIdeas(Model model, PositivForm positivForm, NegativForm negativForm) {
         model.addAttribute("savePositivIdeas", new PositivForm());
-        model.addAttribute("PositivFormList", positivFormList);
+        model.addAttribute("negativFormList", negativFormList);
+
         positivFormList.add(positivForm);
-        System.out.println(positivForm.getPositiv());
+        model.addAttribute("PositivFormList", positivFormList);
+        System.out.println(negativFormList + "," + positivFormList);
         return "stepThree";
     }
+
+    @GetMapping("stepFour")
+    public String output (Model model, PositivForm positivForm, NegativForm negativForm) {
+        model.addAttribute("negativFormList", negativFormList);
+        model.addAttribute("PositivFormList", positivFormList);
+        model.addAttribute("savePositivIdeas", new PositivForm());
+
+        return"stepFour";
+    }
+
+
 }
