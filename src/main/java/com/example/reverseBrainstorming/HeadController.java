@@ -68,11 +68,9 @@ public class HeadController {
     @GetMapping("stepFour")
     public String output (Model model, PositivForm positivForm, NegativForm negativForm) {
         model.addAttribute("negativFormList", negativFormList);
-        model.addAttribute("PositivFormList", positivFormList);
+        model.addAttribute("positivFormList", positivFormList);
         model.addAttribute("savePositivIdeas", new PositivForm());
 
         return"stepFour";
     }
-
-
 }
