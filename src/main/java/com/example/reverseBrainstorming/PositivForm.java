@@ -1,8 +1,15 @@
 package com.example.reverseBrainstorming;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class PositivForm {
 
+    private int id;
     private String positiv;
+    private int positiv_id;
 
     public String getPositiv() {
         return positiv;
